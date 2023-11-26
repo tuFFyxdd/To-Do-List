@@ -12,7 +12,7 @@ window.addEventListener('load', () => {
     form.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        const task = input.value.trim(); 
+        const task = input.value.trim();
 
         // Check if the task is not empty before creating a new task element
         if (task !== "") {
@@ -90,8 +90,12 @@ window.addEventListener('load', () => {
         });
 
         task_delete_el.addEventListener('click', () => {
-            list_el.removeChild(task_el);
-            removeTaskFromLocalStorage(task);
+            const confirmDelete = confirm('Are you sure you want to delete this task?');
+
+            if (confirmDelete) {
+                list_el.removeChild(task_el);
+                removeTaskFromLocalStorage(task);
+            }
         });
     }
 
@@ -124,9 +128,6 @@ window.addEventListener('load', () => {
         });
         const updatedTasks = tasks.filter(task => task.text !== taskToRemove);
         localStorage.setItem('tasks', JSON.stringify(updatedTasks));
-
-        // Display alert when task is deleted
-        alert('Are you sure you want to delete this task? : ' + taskToRemove);
     }
 });
 
