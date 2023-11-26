@@ -176,6 +176,19 @@ main {
 	border-radius: 10px; 
 }
 
+.done {
+	cursor: pointer;
+	outline: none;
+	border: none;
+	background-color: #023047;
+	padding: 0.3em 1.2em;
+	border-radius: 10px;
+	font-weight: 550;
+	color: #ffffff;
+	background-size: 100% 100%;
+}
+
+
 .task .actions .edit {
 	cursor: pointer;
 	outline: none;
@@ -306,10 +319,18 @@ main {
 		font-size: 0.750rem;
 	}
 
+	.task .actions .done {
+		width: 4rem;
+		margin-right: 0;
+		padding: 0;
+		font-size: 0.650rem;
+	}
+
 	.task.completed .done {
+		background-color: #118AB2;
 		width: 3.50rem;
 		margin-right: 0;
-		padding: 2px;
+		padding: 0;
 		font-size: 0.650rem;
 		border-radius: 6px;
 	}
